@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jt.web</groupId>
+  <artifactId>myWeb01</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>myWeb01 Maven Webapp</name>
+  <url>http://maven.aliyun.org</url>
+  <!-- 版本控制 -->
+    <properties>
+	    <org.springframework.version>4.1.6.RELEASE</org.springframework.version>
+	    <org.hibernate.version>5.1.0.Final</org.hibernate.version>
+	</properties>
+	
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>  
+        <artifactId>spring-context</artifactId>  
+        <version>${org.springframework.version}</version>
+    </dependency>
+    <!-- spring orm 包含spring-jdbc、spring-tx -->
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+    <!-- SPRING MVC -->
+    <!-- spring-web包包含Servlet和Portlet所需要通用组件，spring-webmvc则在Servlet环境中启用MVC支持。 -->
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-web</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<!-- spring-webmvc依赖于spring-web，所以定义了spring-webmvc依赖后，可以不用显示的在pom定义spring-web。 -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${org.springframework.version}</version>
+	</dependency>
+	<!-- spring-data-jpa -->
+	<dependency>
+        <groupId>org.springframework.data</groupId>
+        <artifactId>spring-data-jpa</artifactId>
+        <version>1.7.1.RELEASE</version>
+    </dependency>
+    
+     <!-- hibernate 支持-->
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>${org.hibernate.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-ehcache</artifactId>
+        <version>${org.hibernate.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        <version>${org.hibernate.version}</version>
+    </dependency>
+    <!-- 连接池 -->
+    <dependency>
+        <groupId>com.jolbox</groupId>
+        <artifactId>bonecp</artifactId>
+        <version>0.8.0.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>com.jolbox</groupId>
+        <artifactId>bonecp-spring</artifactId>
+        <version>0.8.0.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>com.jolbox</groupId>
+        <artifactId>bonecp-provider</artifactId>
+        <version>0.8.0-alpha1</version>
+    </dependency>
+    
+    <!-- 需要的MySQL驱动包 -->
+	<dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>5.0.5</version>
+	</dependency>
+	<!-- lombok -->
+	<!-- lombok使用的get set方便红色提示， 需要安装lombokjar包到eclipse安装目录下，且加入配置  -javaagent:lombok.jar -Xbootclasspath/a:lombok.jar-->
+	<dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.16.6</version>
+    </dependency>
+    
+  </dependencies>
+  <build>
+    <finalName>myWeb01</finalName>
+  </build>
+</project>
