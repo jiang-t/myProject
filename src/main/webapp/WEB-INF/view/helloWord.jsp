@@ -34,7 +34,7 @@ cola(function (model) {
         {
             city: "shenzhen",
             postCode: 300021
-        }
+        }  
     ]);
 });
 </script>
