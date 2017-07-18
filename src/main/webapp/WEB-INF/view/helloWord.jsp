@@ -52,5 +52,13 @@ cola(function (model) {
     <ul>
     	<li c-repeat="item in addresses"><span c-bind="item.city"></span>:<span c-bind="item.postCode"></span></li>
     </ul>
+    
+    <%=request.getContextPath() %>
+    <br>
+    <%=request.getServletPath() %>
+    <br>
+    <%=request.getContextPath() %>
+    <br>
+    <%=request.getPathInfo() %>
 </body>
 </html>

@@ -1,0 +1,27 @@
+<html >
+<head>
+<meta charset="utf-8">
+<script type="text/javascript" src="/myWeb01/js/jquery-1.7.2.min.js"></script>
+<link rel="stylesheet" href="/myWeb01/js/colajs/min/cola.min.css">
+<link rel="stylesheet" href="/myWeb01/js/colajs/min/semantic.min.css">
+<script type="text/javascript" src="/myWeb01/js/colajs/min/3rd.min.js"></script>
+<script type="text/javascript" src="/myWeb01/js/colajs/min/cola.min.js"></script>
+<script type="text/javascript" src="/myWeb01/js/colajs/min/semantic.min.js"></script>
+</head>
+<script type="text/javascript">
+	cola.route("/list", {
+	    title: "Item List"
+	    templateUrl: "/myWeb01/.html"
+	});
+	function getJson(){
+		var val = $("#aa").text;
+		alert(val);
+	}
+</script>
+<body>
+
+<h2>Hello World ssssssssss!</h2>
+<h2 id="aa">sdsdsssssssss</h2>
+<button onclick="getJson();">获取</button>
+</body>
+</html>
