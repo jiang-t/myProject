@@ -1,32 +1,10 @@
 <html >
 <head>
 <meta charset="utf-8">
-<script type="text/javascript" src="/myWeb01/js/jquery-1.7.2.min.js"></script>
-<link rel="stylesheet" href="/myWeb01/js/colajs/min/cola.min.css">
-<link rel="stylesheet" href="/myWeb01/js/colajs/min/semantic.min.css">
-<script type="text/javascript" src="/myWeb01/js/colajs/min/3rd.min.js"></script>
-<script type="text/javascript" src="/myWeb01/js/colajs/min/cola.min.js"></script>
-<script type="text/javascript" src="/myWeb01/js/colajs/min/semantic.min.js"></script>
-</head>
-<script type="text/javascript">
-cola.route("/", {
-    redirectTo: "#/list"
-});
-cola.route("/list", {
-    title: "List",
-    templateUrl: "indexs.html",
-    jsUrl: "indexsjs.js"
-});
-cola.route("/detail/:city", {
-    title: "Detail",
-    templateUrl: "router-detail.html",
-    jsUrl: "$.js"
-});
-</script>
-<body>
+<link rel="import" href="common/common.html" >
 
-<h2>Hello World !</h2>
-<h2 id="aa">sdsd</h2>
-<button >获取</button>
-</body>
+</head>
+
+<script type="text/javascript" src="./app.js"></script>
+<link rel="stylesheet" type="text/css" href="css/home.css">
 </html>
