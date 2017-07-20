@@ -1,15 +1,17 @@
 <html>
 <meta charset="utf-8">
-<script type="text/javascript" src="/myWeb01/js/jquery-3.2.1.js"></script>
-<link rel="stylesheet" href="/myWeb01/js/colajs/min/cola.min.css">
-<link rel="stylesheet" href="/myWeb01/js/colajs/min/semantic.min.css">
-<script type="text/javascript" src="/myWeb01/js/colajs/min/3rd.min.js"></script>
-<script type="text/javascript" src="/myWeb01/js/colajs/min/cola.min.js"></script>
-<script type="text/javascript" src="/myWeb01/js/colajs/min/semantic.min.js"></script>
+<script type="text/javascript" src="/myWeb01/js/jquery-2.0.3.js"></script>
+<link rel="stylesheet" href="/myWeb01/js/colajs/cola.css">
+<link rel="stylesheet" href="/myWeb01/js/colajs/semantic.css">
+<script type="text/javascript" src="/myWeb01/js/colajs/3rd.js"></script>
+<script type="text/javascript" src="/myWeb01/js/colajs/cola.js"></script>
+<script type="text/javascript" src="/myWeb01/js/colajs/semantic.js"></script>
 <body>
-	<div style="height:50px;border-bottom:1px solid #ccc;" class="box;">top栏</div>
+	<div style="height:50px;border-bottom:1px solid #ccc;background:#87CEEB;" class="box;">
+		
+	</div>
 	<div class="h-box">
-	    <div style="width:15%" class="box">
+	    <div style="width:16%;background:F0F8FF;" class="box">
 	    	<div class="ui menu vertical inverted">
 			    <div class="item">
 			        <div class="header">管理模块</div>
@@ -34,18 +36,22 @@
 			</div>
 	    </div>
 	    <div class="flex-box">
-	    	<div c-widget="Tab; height:100">
-			    <nav class="tab-bar">
-			        <ul class="tabs">
-			            <li name="dashboard" c-widget="TabButton; icon:dashboard; caption:控制台;closeable:true"></li>
-			            <li name="desktop" c-widget="TabButton; icon:desktop; caption:数据中心;closeable:true"></li>
-			        </ul>
+	    	<c-tab id="tabControl" style="height: 100%;">
+			    <nav>
+			        <tabs>
+			            <tab name="cola" caption="Cola" class="active" icon="setting"></tab>
+			            <tab name="dorado" caption="Dorado" closeable="true" icon="dashboard"></tab>
+			        </tabs>
 			    </nav>
-			    <ul class="contents">
-			        <li name="dashboard">控制台</li>
-			        <li name="desktop">数据中心</li>
-			    </ul>
-			</div>
+			    <contents>
+			        <content name="cola" class="active">
+			            Cola
+			        </content>
+			        <content name="dorado">
+			            Dorado
+			        </content>
+			    </contents>
+			</c-tab>
 	    </div>
 	</div>
 </body>
