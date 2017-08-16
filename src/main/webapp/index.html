@@ -1,10 +1,25 @@
-<html >
-<head>
+<html>
 <meta charset="utf-8">
-<link rel="import" href="common/common.html" >
-
-</head>
-
-<script type="text/javascript" src="./app.js"></script>
-<link rel="stylesheet" type="text/css" href="css/home.css">
+<script type="text/javascript" src="/myWeb01/js/jquery-2.0.3.js"></script>
+<link rel="stylesheet" href="/myWeb01/js/colajs/cola.css">
+<link rel="stylesheet" href="/myWeb01/js/colajs/semantic.css">
+<script type="text/javascript" src="/myWeb01/js/colajs/3rd.js"></script>
+<script type="text/javascript" src="/myWeb01/js/colajs/cola.js"></script>
+<script type="text/javascript" src="/myWeb01/js/colajs/semantic.js"></script>
+<body>
+	<div c-widget="Tab; height:100">
+    <nav class="tab-bar">
+        <ul class="tabs">
+            <li name="dashboard" c-widget="TabButton; icon:dashboard; caption:控制台;closeable:true"></li>
+            <li name="desktop" c-widget="TabButton; icon:desktop; caption:数据中心;closeable:true"></li>
+            <li name="user" c-widget="TabButton; icon:user; caption:个人中心;closeable:true"></li>
+        </ul>
+    </nav>
+    <ul class="contents">
+        <li name="dashboard">控制台</li>
+        <li name="desktop">数据中心</li>
+        <li name="user">个人中心</li>
+    </ul>
+</div>
+</body>
 </html>
