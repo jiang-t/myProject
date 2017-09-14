@@ -85,4 +85,7 @@
     <!-- 使用annotation定义事务 -->
     <!-- 这里有一个代理的坑，曾经掉里面2天没解决，就是去掉强制使用代理 -->
     <tx:annotation-driven transaction-manager="transactionManager"  />
+    
+    <!-- Spring中引入security配置文件 --><!-- 直接在web.xml中引入，会引发bean实例化失败，应该是xml配置文件加载顺序导致，先加载spring 再加载security -->
+    <import resource="classpath:/spring-security.xml" />
 </beans>
