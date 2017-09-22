@@ -1,0 +1,52 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"  
+    xmlns:beans="http://www.springframework.org/schema/beans"   
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://www.springframework.org/schema/security  
+        http://www.springframework.org/schema/security/spring-security.xsd">  
+   	<http pattern="/login.jsp" security="none"/>
+   	
+    <http use-expressions="true" auto-config="true" >  
+        <!-- 访问所有页面都需要有USER权限 -->  
+        <intercept-url pattern="/*" access="hasRole('ROLE_USER')" />
+        <intercept-url pattern="/home/*"  access="hasRole('ROLE_PLATFORMADMIN')" />
+        <!-- 登录功能 未登录跳转到登录页 -->  
+        <form-login login-page='/login.jsp' /> 
+        <!-- 登出功能  登出后跳转到登录页-->  
+        <logout logout-success-url="/login.jsp" />  
+        <access-denied-handler error-page="/accessDenied.jsp"/>
+        <!-- 增加一个filter，这点与Acegi是不一样的，不能修改默认的filter了， 这个filter位于FILTER_SECURITY_INTERCEPTOR之前  -->
+        <custom-filter ref="myFilter" before="FILTER_SECURITY_INTERCEPTOR" />
+        
+    </http>
+    
+    <!-- 一个自定义的filter，必须包含authenticationManager,accessDecisionManager,securityMetadataSource三个属性，
+                            我们的所有控制将在这三个类中实现，解释详见具体配置  -->
+    <beans:bean id="myFilter" class="com.common.MyFilterSecurityInterceptor">
+        <beans:property name="authenticationManager" ref="authenticationManager" />
+        <beans:property name="accessDecisionManager" ref="myAccessDecisionManagerBean" />
+        <beans:property name="securityMetadataSource" ref="securityMetadataSource" />
+    </beans:bean>
+    
+    <!-- 验证配置 ， 认证管理器，实现用户认证的入口，主要实现UserDetailsService接口即可 -->
+    <authentication-manager alias="authenticationManager">
+        <authentication-provider user-service-ref="myUserDetailService">
+            <!--   如果用户的密码采用加密的话
+                <password-encoder hash="md5" />
+            -->
+        </authentication-provider>
+    </authentication-manager>
+    
+    <!-- 在这个类中，你就可以从数据库中读入用户的密码，角色信息，是否锁定，账号是否过期等 -->
+    <beans:bean id="myUserDetailService" class="com.common.MyUserDetailService" ></beans:bean>
+    <!-- 访问决策器，决定某个用户具有的角色，是否有足够的权限去访问某个资源 -->    
+    <beans:bean id="myAccessDecisionManagerBean" class="com.common.MyAccessDecisionManager"></beans:bean>
+    <!-- 资源源数据定义，将所有的资源和权限对应关系建立起来，即定义某一资源可以被哪些角色访问     -->
+    <beans:bean id="securityMetadataSource" class="com.common.MyInvocationSecurityMetadataSource" />
+    
+   <!-- 认证信息国际化 -->
+   <!-- <bean id="messageSource" class="org.springframework.context.support.ReloadableResouceBundleMessageSource">
+     <property name="basename" value="classpath:org/springframework/security/message_zh_cn"/>
+   </bean> -->
+</beans:beans>

@@ -1,22 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>vue导航菜单</title>
-    <link rel="stylesheet" href="/myWeb01/js/bootstrap-3.3.7/css/bootstrap.min.css">
-    <script type="text/javascript" src="/myWeb01/js/vue/vue.js"></script>
+   	<meta charset="UTF-8">
+    <title>index.html</title>
+   	<link href="/myWeb01/js/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+   	<link rel="stylesheet" href="/myWeb01/css/index.css">
+   	<script src="/myWeb01/js/jquery.js"></script>
+   	<script src="/myWeb01/js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+   	<script type="text/javascript" src="/myWeb01/js/vue/vue.js"></script>
     <script type="text/javascript" src="/myWeb01/js/vue/vue-router.js"></script>
-    <link rel="stylesheet" href="/myWeb01/css/index.css">
 </head>
 <body>
-    <div id="app">
-	  {{ message }}
-	</div>
-	<a href='j_spring_security_logout' >退出</a>
-    <script type="text/javascript" src="/myWeb01/js/jquery-1.12.4.js"></script>
-    <script src="/myWeb01/js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
-    
-    <script type="text/javascript">
+	
+<!--html里的写法，直接搭好bootstrap导航条结构这里就用美食来做例子吧-->
+
+    <!--反色的导航条-->
+	<nav id="app" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container-fluid">
+	       	<div class="navbar-header">
+	           	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+	           	<a class="navbar-brand" href="#">蒋大壮-supper<span class="glyphicon glyphicon-cutlery"></span></a>
+	       </div>
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               	<ul class="nav navbar-nav">
+                   	<li><a href="#">首页</a></li>
+                   	<li class="dropdown">
+                       	<a href="#" class="dropdown-toggle" data-toggle="dropdown">菜谱 
+                       	<span class="caret"></span></a>
+                       	<ul class="dropdown-menu" role="menu">
+                           	<li class="dropdown-submenu">  
+                               	<a href="#">主食</a>
+                               	<ul class="dropdown-menu">  
+                                   	<li><a href="#">饭</a></li>  
+                                   	<li><a href="#">饼</a></li>  
+                                   	<li><a href="#">包子</a></li>
+                               	</ul>  
+                           	</li>
+                           	<li><a href="#">肉类</a></li>
+                           	<li><a href="#">水产</a></li>
+                       	</ul>
+                   </li>
+                   <li><a href="#">食材</a></li>
+                   <li><a href="#">健康</a></li>
+                   <li><a href="#">话题</a></li>
+                   <li><a href="#">活动</a></li>
+               	</ul>
+        	</div>
+        	<div class="navbar-header" style="float:right;">
+        		{{ message }}
+	        	<span ><a href='admin.html'>后台管理</a>&nbsp;&nbsp;</span>
+	        	<a href='j_spring_security_logout' >退出</a>
+        	</div>
+        	
+    	</div>
+	</nav>
+	<script type="text/javascript">
     	var app = new Vue({
     	  el: '#app',
     	  data: {

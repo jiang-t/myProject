@@ -1,4 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/WEB-INF/view/helloWord.jsp=UTF-8
-encoding//src/main/webapp/index.jsp=UTF-8
+encoding//src/main/webapp/accessDenied.jsp=UTF-8
+encoding//src/main/webapp/index.html=UTF-8
 separateDerivedEncodings=true
