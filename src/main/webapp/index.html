@@ -5,6 +5,7 @@
     <title>index.html</title>
    	<link href="/myWeb01/js/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
    	<link rel="stylesheet" href="/myWeb01/css/index.css">
+   	<link rel="stylesheet" href="/myWeb01/css/conmon.css">
    	<script src="/myWeb01/js/jquery.js"></script>
    	<script src="/myWeb01/js/bootstrap-3.3.7/js/bootstrap.min.js"></script>
    	<script type="text/javascript" src="/myWeb01/js/vue/vue.js"></script>
@@ -14,58 +15,72 @@
 	
 <!--html里的写法，直接搭好bootstrap导航条结构这里就用美食来做例子吧-->
 
-    <!--反色的导航条-->
-	<nav id="app" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<div class="container-fluid">
-	       	<div class="navbar-header">
-	           	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-	           	<a class="navbar-brand" href="#">蒋大壮-supper<span class="glyphicon glyphicon-cutlery"></span></a>
-	       </div>
-           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-               	<ul class="nav navbar-nav">
-                   	<li><a href="#">首页</a></li>
-                   	<li class="dropdown">
-                       	<a href="#" class="dropdown-toggle" data-toggle="dropdown">菜谱 
-                       	<span class="caret"></span></a>
-                       	<ul class="dropdown-menu" role="menu">
-                           	<li class="dropdown-submenu">  
-                               	<a href="#">主食</a>
-                               	<ul class="dropdown-menu">  
-                                   	<li><a href="#">饭</a></li>  
-                                   	<li><a href="#">饼</a></li>  
-                                   	<li><a href="#">包子</a></li>
-                               	</ul>  
-                           	</li>
-                           	<li><a href="#">肉类</a></li>
-                           	<li><a href="#">水产</a></li>
-                       	</ul>
-                   </li>
-                   <li><a href="#">食材</a></li>
-                   <li><a href="#">健康</a></li>
-                   <li><a href="#">话题</a></li>
-                   <li><a href="#">活动</a></li>
-               	</ul>
-        	</div>
-        	<div class="navbar-header" style="float:right;">
-        		{{ message }}
-	        	<span ><a href='admin.html'>后台管理</a>&nbsp;&nbsp;</span>
-	        	<a href='j_spring_security_logout' >退出</a>
-        	</div>
-        	
-    	</div>
+    <!-- <a href='j_spring_security_logout' >退出</a> -->
+    <nav id="topNav">	
+	<div id="topNavWrap">	
+		<div id="topNavLeft" name="和天下">欢迎来到和天下！
+			<a href="javascript:void(0);" onclick="login2()">请登录</a> 
+			<a href="javascript:void(0);" onclick="register();">免费注册</a>
+		</div>	
+		<ul id="topNavRight" style="display: block;">
+			<li>&nbsp;&nbsp;
+				<span id="topEpayInfo" style="display: inline;">余额：
+					<strong class="money">0</strong> 元 | 
+					<span id="topEpayInfo" style="display: inline;">积分：
+						<strong class="c_ba2636 jifen">0</strong>
+						<a href="/my/Draw.aspx" target="_blank">提现</a>
+					</span>
+					&nbsp;|&nbsp;
+					<span><a style="color:#1E50A2" href="/my/pay.aspx" target="_blank">充值</a></span>
+				</span>
+			</li>			
+			<li>
+				<div class="mcDropMenuBox">
+					<a target="_top" user="y" class="topNavHolder" href="/my/order.aspx" rel="nofollow">我的彩票<i></i></a>
+						<b class="holderLine">|</b>
+					<div class="mcDropMenu">
+						<a target="_top" user="y" href="/my/order.aspx" rel="nofollow">投注记录</a>
+						<a target="_top" user="y" href="/my/order.aspx?states=2" rel="nofollow">中奖记录</a>
+						<a target="_top" user="y" href="/my/huodong.aspx" rel="nofollow">我的活动</a>	
+						<a target="_blank" user="y" href="/my/index.aspx" rel="nofollow">个人主页</a>
+					</div>			
+				</div>
+			</li>			
+			<li>
+				<div class="mcDropMenuBox">				
+					<a target="_blank" class="topNavHolder" href="/my/index.aspx" rel="nofollow">我的<i></i></a>				
+					<div class="mcDropMenu">					
+						<a target="_blank" href="/my/index.aspx" rel="nofollow">个人主页</a>					
+						<a target="_blank" href="/my/scoreinfo.aspx" rel="nofollow">资金明细</a>					
+						<a target="_blank" href="/my/integrallog.aspx" rel="nofollow">积分明细</a>					
+						<a target="_blank" href="/my/integraltosocre.aspx" rel="nofollow">积分兑换</a>	 								
+						<a target="_blank" href="/my/pay.aspx" rel="nofollow">我要充值</a>	 								
+						<a target="_blank" href="/my/Draw.aspx" rel="nofollow">我要提款</a>	 							
+					</div>			
+				</div>
+			</li>            		
+		</ul>	
+	</div>
 	</nav>
+	<div class="">
+	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+	</div>
+	
 	<script type="text/javascript">
+	$(".mcDropMenuBox").mouseover(function () {
+        $(".mcDropMenu", this).show();
+    }).mouseout(function () {
+        $(".mcDropMenu", this).hide();
+    });
+	/*
+		
     	var app = new Vue({
     	  el: '#app',
     	  data: {
     	    message: 'Hello Vue!'
     	  }
     	})
+    	*/
     </script>
 </body>
 </html>
