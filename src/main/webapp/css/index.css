@@ -188,6 +188,8 @@ body{
 	-ms-filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2)
 }
 .mcDropMenu {
+	margin-left:5px;
+	margin_right:5px;
 	position:absolute;
 	left:-1px;
 	top:22px;
@@ -229,4 +231,13 @@ body{
 	overflow:hidden;
 	vertical-align:middle;
 	margin:3px 5px auto auto
+}
+#logo{
+	background-image:url(/myWeb01/img/logo.jpg);
+	min-width:990px;
+	width:990px;
+	height:70px;
+	align:center;
+	repeat:no-repeat;
+	position:relative
 }
