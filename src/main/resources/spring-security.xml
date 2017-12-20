@@ -32,9 +32,8 @@
     <!-- 验证配置 ， 认证管理器，实现用户认证的入口，主要实现UserDetailsService接口即可 -->
     <authentication-manager alias="authenticationManager">
         <authentication-provider user-service-ref="myUserDetailService">
-            <!--   如果用户的密码采用加密的话
-                <password-encoder hash="md5" />
-            -->
+            <!-- 如果用户的密码采用加密的话 --> 
+            <password-encoder hash="md5" />
         </authentication-provider>
     </authentication-manager>
     
